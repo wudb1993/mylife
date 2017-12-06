@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="mylife-ui-api:war">
+    <output-path>$PROJECT_DIR$/mylife-ui-api/target</output-path>
+    <root id="archive" name="mylife-ui-api.war">
+      <element id="artifact" artifact-name="mylife-ui-api:war exploded" />
+    </root>
+  </artifact>
+</component>
