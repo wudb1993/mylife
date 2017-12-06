@@ -12,7 +12,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="mylife-ui" target="1.5" />
-      <module name="mylife-ui-api" target="1.5" />
+      <module name="mylife-ui-api" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>
