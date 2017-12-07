@@ -6,18 +6,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * @author  矜持的折返跑
+ * 展示页面内容
+ * @author 矜持的折返跑
  * @date 2017-12-07
- * 登录注册和查询用户信息
  */
 @Controller
-@RequestMapping(value="/userAccount")
-public class UserAccountController {
+@RequestMapping(value="/webContentController",method= RequestMethod.GET)
+public class WebContentController {
 
-    @RequestMapping(value="/userLogin", method = RequestMethod.GET)
-    public ModelAndView userLogin(){
-        ModelAndView mv = new ModelAndView();
+    public ModelAndView getContent(){
+        ModelAndView mv= new ModelAndView();
+
         return mv;
-    }
 
+    }
 }
