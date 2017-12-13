@@ -9,7 +9,7 @@ import java.util.Date;
  */
 public class WebBanner {
     private String id;
-    private String imgPath;
+    private String imgURL ;
     private String title;//标题
     private String userId;//作者ID
     private String author;//作者
@@ -21,7 +21,24 @@ public class WebBanner {
     private Date operTime; //审核时间
     private String noticeType;//文章类型
     private String operId;//操作员ID
+    private String type;//类型
 
+
+    public String getImgURL() {
+        return imgURL;
+    }
+
+    public void setImgURL(String imgURL) {
+        this.imgURL = imgURL;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
     public String getOperId() {
         return operId;
     }
@@ -108,14 +125,6 @@ public class WebBanner {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getImgPath() {
-        return imgPath;
-    }
-
-    public void setImgPath(String imgPath) {
-        this.imgPath = imgPath;
     }
 
     public String getId() {

@@ -3,6 +3,7 @@ package com.mylife.dao.impl;
 import com.mylife.base.dao.impl.BaseDaoImpl;
 import com.mylife.dao.WebContentDao;
 import com.mylife.pojo.UserRegist;
+import com.mylife.pojo.WebBanner;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -16,14 +17,15 @@ import java.util.Map;
  */
 public class WebContentDaoImpl   extends BaseDaoImpl<UserRegist,Long> implements WebContentDao{
     /**
-     *
-     * @param noticeMap
+     * 根据ID查询图片信息
+     * @param webBannerId
      * @return
      */
-//    @Override
-//    public List<UserRegist> queryContent(Map<String, Object> noticeMap) {
-//        List<UserRegist> UserRegistList = getSqlSession().selectList("UserRegistList.querySystemArticle",noticeMap);
-//        return UserRegistList;
-//    }
+    @Override
+    public List<WebBanner> queryWebBanner(long webBannerId) {
+        List<WebBanner> webBannerListList = getSqlSession().selectList("webBannerMapper.queryWebBannerById",webBannerId);
+        return webBannerListList;
+    }
+
 
 }

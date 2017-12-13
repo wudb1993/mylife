@@ -16,6 +16,9 @@
 <!--=== end plugins ===-->
 <link href="css/style.css" rel="stylesheet">
 <link href="css/responsive.css" rel="stylesheet">
+	<script type="text/javascript" src="/js/jquery.js"></script>
+	<script type="text/javascript" src="/js/index.js"></script>
+	<script type="text/javascript" src="/js/template.js"></script>
 </head>	
 
 <body>
@@ -26,14 +29,14 @@
 			<div class="row">
 				<div class="col-md-7 col-sm-8 col-xs-5">
 					<ul class="list-inline info-link">
-						<li title="Language"><i class="fa fa-globe"></i><span class="hidden-xs">Language : English</span></li>
-						<li title="Hot Line"><i class="fa fa-phone"></i><span class="hidden-xs">(+123) 45678910</span></li>
+						<li title="Language"><i class="fa fa-globe"></i><span class="hidden-xs">Language : Chinese</span></li>
+						<li title="Hot Line"><i class="fa fa-phone"></i><span class="hidden-xs">(+86) 1333330****</span></li>
 						<li title="Show Time"><i class="fa fa-clock-o"></i><span class="hidden-xs">Sat - Wet : 9.00 - 18.00</span></li>
 					</ul>
 				</div> 
 				<div class="col-md-5 col-sm-4 col-xs-7">
 					<ul class="list-inline pull-right social-link">
-						<li title="Email"><i class="fa fa-paper-plane"></i><span class="hidden-sm hidden-xs">info@bootultra.com </span></li>
+						<li title="Email"><i class="fa fa-paper-plane"></i><span class="hidden-sm hidden-xs">wudb1993@163.com </span></li>
 						<li title="Facebook"><i class="fa fa-facebook"></i></li>
 						<li title="Google+"><i class="fa fa-google-plus"></i></li>
 						<li title="Twitter"><i class="fa fa-twitter"></i></li>
@@ -108,15 +111,22 @@
 					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
 				</ol>
 
-				<div class="carousel-inner" role="listbox">
-					<div class="item active">
-						<div class="intro-content text-center">
-							<h1>welcome to Ranger</h1>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit agrel. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh viverra non.</p>
-							<a class="btn btn-default" href="#" role="button">Read More <i class="lnr lnr-chevron-right"></i></a>
-							<a class="btn btn-primary scroll" href="#what-we-do" href="#" role="button">Get Started <i class="lnr lnr-chevron-down"></i></a>
-						</div>
-					</div>
+				<div class="carousel-inner" id="suibianba" role="listbox">
+					<script id="tpl" type="text/html">
+						<%for (var i = 0; i < list.length; i++){%>
+						   <div class="item active">
+							   <div class="intro-content text-center">
+							   <h1><%:=list[i].title%></h1>
+								   <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit agrel. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh viverra non.</p>
+								   <a class="btn btn-default" href="#" role="button">Read More <i class="lnr lnr-chevron-right"></i></a>
+								   <a class="btn btn-primary scroll" href="#what-we-do" href="#" role="button">Get Started <i class="lnr lnr-chevron-down"></i></a>
+							   </div>
+						   </div>
+						<%}%>
+
+                    </script>
+
+
 					<div class="item">
 						<div class="intro-content text-center">
 							<h1>we can help you</h1>
