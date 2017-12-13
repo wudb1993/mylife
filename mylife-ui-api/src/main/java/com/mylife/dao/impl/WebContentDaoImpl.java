@@ -6,6 +6,7 @@ import com.mylife.pojo.UserRegist;
 import com.mylife.pojo.WebBanner;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -23,7 +24,9 @@ public class WebContentDaoImpl   extends BaseDaoImpl<UserRegist,Long> implements
      */
     @Override
     public List<WebBanner> queryWebBanner(long webBannerId) {
-        List<WebBanner> webBannerListList = getSqlSession().selectList("webBannerMapper.queryWebBannerById",webBannerId);
+        Map<String,Object> webBannerMap = new HashMap<String, Object>();
+        webBannerMap.put("webBannerId",webBannerId);
+        List<WebBanner> webBannerListList = getSqlSession().selectList("webBannerMapper.queryWebBannerById",webBannerMap);
         return webBannerListList;
     }
 

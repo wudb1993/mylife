@@ -6,7 +6,7 @@
         select * from pp_banner_img
         where 1=1
         <if test="webBannerId!=null and webBannerId!=''">
-        id =#{webBannerId}
+        and id =#{webBannerId}
         </if>
     </select>
 

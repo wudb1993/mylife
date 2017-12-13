@@ -29,7 +29,7 @@ public class WebContentController {
     public ModelAndView queryWebBanner(@RequestParam String param){
         ModelAndView mv= new ModelAndView();
         JSONObject paramList = JSONObject.fromObject(param);
-        Long webBannerId = paramList.getLong("webBannerId");
+        Long webBannerId = paramList.optLong("webBannerId",1L);
         List<WebBanner> webBannerList = webBannerServiceImpl.queryWebBannerById(webBannerId);
 
         mv.addObject("webBannerList",webBannerList);

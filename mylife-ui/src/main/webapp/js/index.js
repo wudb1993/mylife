@@ -4,19 +4,21 @@ var index = {
     },
     patch:function(){
         var param ={
-            webBannerId:""
-            },
+            webBannerId:3
+            };
+
             $.ajax({
-            url:'http://localhost:8095/webContentController/queryWebBanner.do',
+            url:'http://localhost:8080/mylife-ui-api/webContentController/queryWebBanner.do',
             cache:false,
             async:false,
             dataType:"json",
             data:{param:JSON.stringify(param)},
             success: function(data){
-                var list = data.webBannerList;
+                var list = data.model.webBannerList;
+                console.log(data);
+                console.log(list);
                 var html = template($('#tpl').html(), {
-                    list:list,
-                    ishowIcon:isShowIcon
+                    list:list
                 },'index');
                 $('#suibianba').html(html);
             }
