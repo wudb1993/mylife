@@ -103,16 +103,17 @@
 <!--======== intro =========-->
 <section class="intro">
 	<div class="row">
-		<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+		<div id="suibianba" class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+			<script id="tpl" type="text/html">
 			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 				<ol class="carousel-indicators">
-					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="0"  class="active" ></li>
 					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
 					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
 				</ol>
 
-				<div class="carousel-inner" id="suibianba" role="listbox">
-					<script id="tpl" type="text/html">
+				<div class="carousel-inner"  role="listbox">
+
 						<%for (var i = 0; i < list.length; i++){%>
 						   <div class="item active">
 							   <div class="intro-content text-center">
@@ -124,7 +125,7 @@
 						   </div>
 						<%}%>
 
-                    </script>
+
 
 
 					<div class="item">
@@ -145,6 +146,7 @@
 					</div>
 				</div>
 			</div>
+			</script>
 		</div>
 	</div>
 </section>
