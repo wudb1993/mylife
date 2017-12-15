@@ -1,6 +1,7 @@
 package com.mylife.service.impl;
 
 import com.mylife.dao.WebContentDao;
+import com.mylife.pojo.NewsInfo;
 import com.mylife.pojo.WebBanner;
 import com.mylife.service.WebBannerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.servlet.http.WebConnection;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 图片
@@ -22,12 +24,23 @@ public class WebBannerServiceImpl implements WebBannerService{
 
     /**
      * 根据ID查询图片信息
-     * @param webBannerId
+     * @param webBannerMap
      * @return
      */
     @Override
-    public List<WebBanner> queryWebBannerById(long webBannerId) {
-        List<WebBanner> webBannerList = webContentDaoImpl.queryWebBanner(webBannerId);
+    public List<WebBanner> queryWebBannerById(Map<String ,Object> webBannerMap) {
+        List<WebBanner> webBannerList = webContentDaoImpl.queryWebBanner(webBannerMap);
         return webBannerList;
+    }
+
+    /**
+     * 根据id查询新闻内容
+     * @param newsMap
+     * @return
+     */
+    @Override
+    public List<NewsInfo> queryNewsInfoById(Map<String, Object> newsMap) {
+        List<NewsInfo> newsInfoList = webContentDaoImpl.queryNewsInfoById(newsMap);
+        return newsInfoList;
     }
 }

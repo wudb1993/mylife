@@ -2,6 +2,7 @@ package com.mylife.dao.impl;
 
 import com.mylife.base.dao.impl.BaseDaoImpl;
 import com.mylife.dao.WebContentDao;
+import com.mylife.pojo.NewsInfo;
 import com.mylife.pojo.UserRegist;
 import com.mylife.pojo.WebBanner;
 import org.springframework.stereotype.Repository;
@@ -19,15 +20,24 @@ import java.util.Map;
 public class WebContentDaoImpl   extends BaseDaoImpl<UserRegist,Long> implements WebContentDao{
     /**
      * 根据ID查询图片信息
-     * @param webBannerId
+     * @param webBannerMap
      * @return
      */
     @Override
-    public List<WebBanner> queryWebBanner(long webBannerId) {
-        Map<String,Object> webBannerMap = new HashMap<String, Object>();
-        webBannerMap.put("webBannerId",webBannerId);
+    public List<WebBanner> queryWebBanner(Map<String ,Object> webBannerMap) {
         List<WebBanner> webBannerListList = getSqlSession().selectList("webBannerMapper.queryWebBannerById",webBannerMap);
         return webBannerListList;
+    }
+
+    /**
+     * 根据id查询新闻内容
+     * @param newsMap
+     * @return
+     */
+    @Override
+    public List<NewsInfo> queryNewsInfoById(Map<String, Object> newsMap) {
+        List<NewsInfo> newsInfoList = getSqlSession().selectList("newsInfoMapper.queryNewsInfoById",newsMap);
+        return newsInfoList;
     }
 
 

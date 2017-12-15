@@ -103,53 +103,57 @@
 <!--======== intro =========-->
 <section class="intro">
 	<div class="row">
-		<div id="suibianba" class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+		<div id="topBanner" class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
 			<script id="tpl" type="text/html">
 			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 				<ol class="carousel-indicators">
-					<li data-target="#carousel-example-generic" data-slide-to="0"  class="active" ></li>
-					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+					<%for (var i = 0; i < list.length; i++){%>
+					<li data-target="#carousel-example-generic" data-slide-to= <%:=list[i].id-1%> <%:=activeTwo(list[i].id-1)%> ></li>
+					<%}%>
 				</ol>
 
-				<div class="carousel-inner"  role="listbox">
-
-						<%for (var i = 0; i < list.length; i++){%>
-						   <div class="item active">
+				<div class="carousel-inner" role="listbox">
+					<%for (var i = 0; i < list.length; i++){%>
+                       <div id="we" <%:=activeSlider(list[i].id)%>  >
 							   <div class="intro-content text-center">
 							   <h1><%:=list[i].title%></h1>
 								   <p><%:=list[i].general%></p>
 								   <a class="btn btn-default" href="#" role="button">Read More <i class="lnr lnr-chevron-right"></i></a>
 								   <a class="btn btn-primary scroll" href="#what-we-do" href="#" role="button">Get Started <i class="lnr lnr-chevron-down"></i></a>
 							   </div>
-						   </div>
-						<%}%>
-
-
-
-
-					<div class="item">
-						<div class="intro-content text-center">
-							<h1>we can help you</h1>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit agrel. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh viverra non.</p>
-							<a class="btn btn-default" href="#" role="button">Read More <i class="lnr lnr-chevron-right"></i></a>
-							<a class="btn btn-primary scroll" href="#what-we-do" role="button">Get Started <i class="lnr lnr-chevron-down"></i></a>
-						</div>
-					</div>
-					<div class="item">
-						<div class="intro-content text-center">
-							<h1>we can Guide you</h1>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit agrel. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh viverra non.</p>
-							<a class="btn btn-default" href="#" role="button">Read More <i class="lnr lnr-chevron-right"></i></a>
-							<a class="btn btn-primary scroll" href="#what-we-do" href="#" role="button">Get Started <i class="lnr lnr-chevron-down"></i></a>
-						</div>
-					</div>
+				        </div>
+				  <%}%>
 				</div>
+
 			</div>
 			</script>
 		</div>
 	</div>
 </section>
+
+
+
+
+<script>
+    //自定义方法
+    template.registerFunction("activeSlider", function (x) {
+       if(x==1){
+           return "class='item active'";
+	   }else{
+           return "class='item'";
+	   }
+    });
+    template.registerFunction("activeDiv", function () {
+            return "<div>";
+    });
+    template.registerFunction("activeTwo", function (x) {
+        if(x==0){
+            return "class='active'";
+        }else{
+            return"";
+		}
+    });
+</script>
 <!--======== end intro =========-->
 <!--======== recent event =========-->
 <section class="recent-event">
